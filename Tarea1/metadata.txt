@@ -1,2 +1,9 @@
 modelo de IA Utilizado: Gemini
+Prompts:
+Cual es la formula de varianzaa?
+Como se relaciona la formula de promedio con la de sumatoria
+Que funciones debo utilizar si quiero programar una funcion de promedio y varianza en C++?
+Dame un ejemplo de un codigo para realizar este problema
+Es este codigo acertado?
+
 
