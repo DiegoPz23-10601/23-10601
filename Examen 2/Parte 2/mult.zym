@@ -1,1 +1,12 @@
 
+Requerimos definir los siguientos operadores 
+Z=>Z chs := fn(Z n) -> sub(n)(0);
+Z=>Z=>Z add := fn(Z n) -> fn(Z k) -> sub(chs(n))(k);
+Z=>Z abs := fn(Z n) -> if(lt(0)(n), chs(n), n);
+Z=>Z=>Z eq := fn(Z n) -> fn(Z k) -> if(lt(n)(k), 0, if(lt(k)(n), 0, 1));
+
+el operador abs es fundamental para hacer psoible que la función mult pueda trabajar con números enteros positivos y negativos
+
+Z=>Z=>Z mult_pos := fn(Z a) -> fn(Z b) -> if(eq(0)(b), 0, add(a)(mult_pos(a)(sub(1)(b)))); la función mult_pos servir´como función auxiliar para completar la función mult
+Finalmente:
+Z=>Z=>Z mult := fn(Z a) -> fn(Z b) -> if(if(lt(0)(a), if(lt(0)(b), 0, 1), if(lt(0)(b), 1, 0)), chs(mult_pos(abs(a))(abs(b))), mult_pos(abs(a))(abs(b)));
